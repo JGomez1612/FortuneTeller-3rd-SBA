@@ -1,8 +1,50 @@
-// console.log("hello")
+const fortunes = {
+    red: [`If you eat something and nobody sees you eat it, it has no calories.`,
+         `You will invent a new dance move in the shower.`,
+          `Error 404: Fortune not found`, 
+          `You need a mint. Like, bad!`],
+    blue: [`You will be hungry again in an hour.`,
+         `Its a good day to have a good day.`, 
+         `Come back later, I'm napping`, 
+         `You will be abducted by aliens, stay indoors!`],
+    yellow: [`Your good vibes are scheduled to arrive in 3, 2, 1... NOW!`,
+         `A compliment storm is coming your way!`, 
+         `Your hands will be clammy during an important handshake`, 
+         `It's all downhill from here.`],
+    green: [`You will finally find that thing you weren't looking for.`, 
+        `You will find money in an old pair of pants exactly when you need it.`, 
+        `Your pet is plotting something against you!`, 
+        `You might wanna get back in that shower`],
+};
 
-let fieldset = document.querySelector('fieldset')
+let fieldset = document.querySelector('fieldset');
+let boxes = document.querySelectorAll(`.box`);
+let nameInput = document.getElementsByName('username')[0];
 
-let submit = document.createElement('button')
-submit.textContent = "Get Your Fortune"
-fieldset.appendChild(submit)
+// Create and Append Submit and Reset buttons
+let submit = document.createElement('button');
+submit.type = 'button';
+submit.textContent = "Pick a color for your fortune!";
+fieldset.appendChild(submit);
+
+// Should be hidden until fortune has been presented
+let reset = document.createElement('button')
+reset.type = 'button';
+reset.textContent = "Play again";
+reset.style.marginLeft = "10px";
+fieldset.appendChild(reset);
+
+// Validating Name form
+submit.addEventListener('click', (e) => {
+    e.preventDefault()
+    if(nameInput.value.length < 1){
+        nameInput.setCustomValidity("Please fill in a name");
+        nameInput.reportValidity()
+    } else {
+        nameInput.setCustomValidity("")
+    }
+});
+
+
+
 

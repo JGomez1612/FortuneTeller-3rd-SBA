@@ -30,7 +30,7 @@ section {
     padding: 0;
 }
 
-#box1, #box2, #box3, #box4 {
+.box {
     height: 90%;
     width: 50%;
     display: flex;
@@ -43,3 +43,8 @@ section {
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.404);
 }
+
+#red {background-color: rgb(187, 31, 31);}
+#blue {background-color: rgb(59, 59, 216);}
+#yellow {background-color: rgb(233, 233, 93);}
+#green {background-color: rgb(58, 133, 58);}
