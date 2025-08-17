@@ -2,9 +2,44 @@ html,
 body {
     margin: 0;
     padding: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
     height: 100%;
+    background-color:rgb(245, 245, 245);
 }
 *, *::before,*::after {
     box-sizing: inherit;
+}
+
+form {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+fieldset{
+    width: 50%;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vh;
+    margin: 0;
+    padding: 0;
+}
+
+#box1, #box2, #box3, #box4 {
+    height: 90%;
+    width: 50%;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 0px 5px 0px 5px;
+    font-size: 10rem;
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.199);
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.404);
 }
