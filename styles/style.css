@@ -48,3 +48,10 @@ section {
 #blue {background-color: rgb(59, 59, 216);}
 #yellow {background-color: rgb(233, 233, 93);}
 #green {background-color: rgb(58, 133, 58);}
+
+.fortune {
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+}
