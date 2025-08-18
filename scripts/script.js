@@ -17,9 +17,15 @@ const fortunes = {
         `You might wanna get back in that shower`],
 };
 
+// Cache my elements
 let fieldset = document.querySelector('fieldset');
 let boxes = document.querySelectorAll('.box');
 let nameInput = document.getElementsByName('username')[0];
+let redBox = document.getElementById('red')
+let blueBox = document.getElementById('blue')
+let yellowBox = document.getElementById('yellow')
+let greenBox = document.getElementById('green')
+
 
 // Create and Append Submit and Reset buttons
 let submit = document.createElement('button');
@@ -59,12 +65,12 @@ submit.addEventListener('click', (e) => {
 
 // Box Event Listeners
 for (let box of boxes){
-box.addEventListener('click', handleBoxClicks)
+box.addEventListener('click', handleColorClicks)
 }
 
-// Handling box clicks
+// Handling color clicks
 
-function handleBoxClicks(e){
+function handleColorClicks(e){
     e.preventDefault();
 
     if (!nameInput.checkValidity()){
@@ -72,9 +78,21 @@ function handleBoxClicks(e){
         return;
     }
 
+    redBox.textContent = "1";
+    blueBox.textContent = "2";
+    yellowBox.textContent = "3";
+    greenBox.textContent = "4";
+
 }
 
+function handleNumberClicks(e){
 
+    redBox.textContent = "1";
+    blueBox.textContent = "2";
+    yellowBox.textContent = "3";
+    greenBox.textContent = "4";
+
+}
 
 
 
