@@ -18,7 +18,7 @@ const fortunes = {
 };
 
 let fieldset = document.querySelector('fieldset');
-let boxes = document.querySelectorAll(`.box`);
+let boxes = document.querySelectorAll('.box');
 let nameInput = document.getElementsByName('username')[0];
 
 // Create and Append Submit and Reset buttons
@@ -44,6 +44,36 @@ submit.addEventListener('click', (e) => {
         nameInput.setCustomValidity("")
     }
 });
+
+// Double check validation before moving onto color selection
+submit.addEventListener('click', (e) => {
+    e.preventDefault()
+    if (!nameInput.checkValidity()) {
+        alert("Please fill in a name!");
+        return;
+    }
+    confirm("Please select a color!");
+    submit.disabled = true;
+    submit.textContent = "Choose a color above!"
+});
+
+// Box Event Listeners
+for (let box of boxes){
+box.addEventListener('click', handleBoxClicks)
+}
+
+// Handling box clicks
+
+function handleBoxClicks(e){
+    e.preventDefault();
+
+    if (!nameInput.checkValidity()){
+        alert("Please fill in name before selecting color");
+        return;
+    }
+
+}
+
 
 
 
