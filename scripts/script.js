@@ -37,6 +37,10 @@ fieldset.appendChild(fortuneDisplay);
 let submit = document.createElement('button');
 submit.type = 'button';
 submit.textContent = "Pick a color for your fortune!";
+submit.style.borderRadius = '7px'
+submit.style.padding = '10px'
+submit.style.fontSize = '20px'
+submit.classList.add('button');
 fieldset.appendChild(submit);
 
 // Should be hidden until fortune has been presented
@@ -44,7 +48,20 @@ let reset = document.createElement('button')
 reset.type = 'button';
 reset.textContent = "Play again";
 reset.style.marginLeft = "10px";
+reset.style.borderRadius = '7px'
+reset.style.padding = '10px'
+reset.style.fontSize = '20px'
+reset.style.display = "none";
+reset.classList.add('button');
 fieldset.appendChild(reset);
+
+// Store boxes original text
+const originalText = {
+    red: "Red",
+    blue: "Blue",
+    yellow: "Yellow",
+    green: "Green"
+}
 
 // Point boxes to their fortunes
 const boxIndex = {
@@ -89,6 +106,8 @@ function handleColorClicks(e) {
 
     const box = e.currentTarget;
 
+    if(box.disabled) return;
+
     if (!choosingNumber){
         colorChoice(box);
     } else if (choosingNumber && selectedColor){
@@ -115,9 +134,30 @@ function numberChoice(box) {
     const fortune = fortunes[selectedColor][index];
 
     fortuneDisplay.textContent = ` Hey ${nameInput.value}, ${fortune}!`;
+
+    // Prevent multiple fortunes until reset
+    choosingNumber = false;
+    for (let box of boxes){
+        box.disabled = true
+    }
+    submit.textContent = "Fortune given!";
+    reset.style.display = "inline-block";
 }
 
-
+// Reset game
+reset.addEventListener('click', () => {
+    for (let box of boxes) {
+        box.disabled = false;
+        box.textContent = originalText[box.id];
+    }
+    selectedColor = null;
+    choosingNumber = false;
+    fortuneDisplay.textContent = "";
+    nameInput.value = ""
+    submit.disabled = false;
+    submit.textContent = "Pick a color for your fortune!";
+    reset.style.display = "none"
+});
 
 
 

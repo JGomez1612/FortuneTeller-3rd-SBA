@@ -4,9 +4,19 @@ body {
     padding: 0;
     box-sizing: border-box;
     height: 100%;
-    background-color:rgb(245, 245, 245);
+    background-color: rgb(245, 245, 245);
+    overflow: hidden;
+
+    .sansita-swashed {
+        font-family: "Sansita Swashed", system-ui;
+        font-optical-sizing: auto;
+        font-style: normal;
+    }
 }
-*, *::before,*::after {
+
+*,
+*::before,
+*::after {
     box-sizing: inherit;
 }
 
@@ -15,10 +25,22 @@ form {
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 20px;
 }
 
-fieldset{
+input {
+    width: 20%;
+    height: 25px;
+}
+
+fieldset {
     width: 50%;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 section {
@@ -34,24 +56,49 @@ section {
     height: 90%;
     width: 50%;
     display: flex;
-    justify-content:center;
+    justify-content: center;
     align-items: center;
     margin: 0px 5px 0px 5px;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 10rem;
     color: white;
+    text-shadow: 5px 5px #000;
     border: 2px solid rgba(255, 255, 255, 0.199);
     border-radius: 12px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.404);
 }
 
-#red {background-color: rgb(187, 31, 31);}
-#blue {background-color: rgb(59, 59, 216);}
-#yellow {background-color: rgb(233, 233, 93);}
-#green {background-color: rgb(58, 133, 58);}
+#red {
+    background-image: linear-gradient(rgb(206, 3, 3), rgb(133, 31, 31));
+}
+
+#blue {
+    background-image: linear-gradient(rgb(42, 42, 230), rgb(16, 16, 92));
+}
+
+#yellow {
+    background-image: linear-gradient(rgb(255, 255, 54), rgb(131, 131, 6));
+}
+
+#green {
+    background-image: linear-gradient(rgb(36, 153, 36), rgb(4, 70, 4));
+}
+
+.button {
+    text-align: center;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
 
 .fortune {
     text-align: center;
-    font-size: 16px;
+    font-family: "Sansita Swashed", system-ui;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 20px;
     font-weight: bold;
-    margin-top: 10px;
+    margin: 15px;
 }
